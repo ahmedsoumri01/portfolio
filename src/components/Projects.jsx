@@ -4,12 +4,12 @@ import data from './../data/projectsData.js';
 
 function Projects() {
   return (
-    <div id='projects' className='sm:pl-[10rem] sm:p-8 p-16 mt-4 sm:mt-0 sm:px-4 sm:py-2'>
-        <div>
+    <div id='projects' className=''>
+        <div className='mx-auto container'>
             <h1 className='w-72 mb-4 tracking-wider font-semibold text-2xl sm:text-2xl md:text-2xl lg:text-2.5xl sm:mb-4 sm:w-full'>Few Projects</h1>
         </div>
-
-        {data.ProjectsData.map((project) => {
+<div className='grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:md:grid-cols-3 lg:p-12'>
+{data.ProjectsData.map((project) => {
             return(<Project key={project.id}
                 image={project.img}
                 name={project.name}
@@ -17,6 +17,8 @@ function Projects() {
                 source={project.source}
                 desc={project.description}/>)
         })}
+       
+</div>
        
     </div>
   );

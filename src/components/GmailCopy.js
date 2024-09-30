@@ -1,7 +1,7 @@
 import React from 'react';
 
 const GmailCopy = () => {
-  const gmailAddress = 'rimmshaa.bibi@gmail.com'
+  const gmailAddress = 'ahmedsoumri01@gmail.com'
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(gmailAddress)
