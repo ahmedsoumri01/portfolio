@@ -4,9 +4,11 @@ import LOGO from "../assets/Logo.png";
 import { Link } from "react-router-dom";
 import { useDarkMode } from "./DarkModeProvider";
 import DarkModeToggle from "react-dark-mode-toggle";
-function Navbar() { 
+import LanguageChanger from "./LanguageChanger";
+ function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
-  const { isDarkMode, toggleDarkMode } = useDarkMode();  const scrollToComponent = (componentId) => {
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const scrollToComponent = (componentId) => {
     const component = document.getElementById(componentId);
     if (component) {
       component.scrollIntoView({
@@ -70,7 +72,7 @@ function Navbar() {
             >
               Skills
             </Link>
-          
+
             <Link
               className="tracking-wide hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400] hover:text-[#ff9582]"
               onClick={() => scrollToComponent("projects")}
@@ -112,7 +114,7 @@ function Navbar() {
               >
                 Skills
               </Link>
-           
+
               <Link
                 className="tracking-wide hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400]"
                 onClick={() => scrollToComponent("projects")}
@@ -128,14 +130,16 @@ function Navbar() {
             </ul>
           )}
         </div>
-        <div className="flex items-center dark:bg-white">
-        <DarkModeToggle
-                onChange={toggleDarkMode}
-                className="ml-2"
-                checked={isDarkMode}
-                size={60}
-              />
-          </div>
+        <div className="flex items-center">
+        <LanguageChanger />
+
+          <DarkModeToggle
+            onChange={toggleDarkMode}
+            className="ml-2"
+            checked={isDarkMode}
+            size={60}
+          />
+        </div>
       </div>
     </>
   );
