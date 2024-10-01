@@ -82,7 +82,7 @@ import { useTranslation } from 'react-i18next';
               onClick={() => scrollToComponent("projects")}
             >
               { t("NAV_ITEM_RESUME") }
-            </Link>
+            </Link>  
             <Link
               className="tracking-wider hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400] hover:text-[#ff9582]"
               onClick={() => scrollToComponent("contact")}
@@ -135,10 +135,20 @@ import { useTranslation } from 'react-i18next';
               >
                 { t("NAV_ITEM_CONTACT") }
               </Link>
+              <div className="flex items-center">
+        <LanguageChanger />
+
+          <DarkModeToggle
+            onChange={toggleDarkMode}
+            className="ml-2"
+            checked={isDarkMode}
+            size={60}
+          />
+        </div>
             </ul>
           )}
         </div>
-        <div className="flex items-center">
+        <div className="hidden md:flex items-center">
         <LanguageChanger />
 
           <DarkModeToggle

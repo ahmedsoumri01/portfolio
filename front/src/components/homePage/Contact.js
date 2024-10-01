@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import GmailCopy from './GmailCopy';
+import GmailCopy from '../GmailCopy';
 
 function Contact() {
   const form = useRef();

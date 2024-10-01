@@ -1,11 +1,11 @@
 import React from "react";
-import Main from "../components/Main";
-import Contact from "../components/Contact";
-import Experiences from "../components/Experiences";
+import Main from "../components/homePage/Main";
+import Contact from "../components/homePage/Contact";
+import Experiences from "../components/homePage/Experiences";
 import Navbar from "../components/Navbar";
-import Projects from "../components/Projects";
+import Projects from "../components/homePage/Projects";
 import BackgroundView from "../Layout/BackgroundView";
-import Skills from "../components/Skills";
+import Skills from "../components/homePage/Skills";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 export default function Home() {
   return (

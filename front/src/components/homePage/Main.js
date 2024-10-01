@@ -1,8 +1,8 @@
 import React from 'react';
 // import Typed from 'react-typed';
-import myImage from './../assets/main_image.png';
+import myImage from '../../assets/main_image.png';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
-import Typewriter from './Typewriter';
+import Typewriter from '../Typewriter';
 import { useTranslation } from 'react-i18next';
 
 function Main() {
@@ -47,10 +47,10 @@ function Main() {
                 </div>
                 <div className="flex place-content-center mt-7 ">
                         <div className="flex flex-row sm:flex-col gap-4">
-                            <a rel="noreferrer" href="https://www.linkedin.com/in/rimsha-6b2407198" target="_blank" className='transition-all ease-in-out hover:text-blue-600'>
+                            <a rel="noreferrer" href="https://www.linkedin.com/in/ahmed-soumri/" target="_blank" className='transition-all ease-in-out hover:text-blue-600'>
                                 <AiFillLinkedin size={40} className="cursor-pointer" />
                             </a>
-                            <a rel="noreferrer" href="https://github.com/rimshub" target="_blank" className='transition-all ease-in-out hover:text-gray-500'>
+                            <a rel="noreferrer" href="https://github.com/ahmedsoumri01" target="_blank" className='transition-all ease-in-out hover:text-gray-500'>
                                 <AiFillGithub size={40} className="cursor-pointer" />
                             </a>
                         </div>
