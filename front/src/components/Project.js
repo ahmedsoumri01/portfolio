@@ -9,18 +9,19 @@ function Projects({ image, name, live, source, desc }) {
   };
 
   return (
-    <div className="m-4 rounded-lg border-2 border-gray-200/30 flex flex-col h-full md:my-6">
-      <div className="relative">
-      <img
-        alt="project"
-        src={image}
-        className="rounded-lg w-full h-[350px] xl:h-[390px]"
-      />
-      <div className="absolute top-0">
-        more details
+    <div className="m-4 rounded-lg border-2 h-fit border-gray-200/30 flex flex-col min-h-[650px] md:my-6">
+      <div className="relative group">
+        <img
+          alt="project"
+          src={image}
+          className="rounded-lg w-full h-[350px] xl:h-[390px] transition duration-300 ease-in-out group-hover:blur-sm"
+        />
+        <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 mb-4 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+          <button className="bg-[#ec6e59] text-white px-4 py-2 rounded-md hover:bg-white hover:border-2 hover:text-black hover:border-[#ec6e59]">
+            More Details
+          </button>
+        </div>
       </div>
-      </div>
-       
 
       <div className="p-2 py-3 flex-1 flex flex-col justify-between">
         <h1 className="text-xl font-bold text-[#ec6e59]">{name}</h1>
@@ -47,7 +48,7 @@ function Projects({ image, name, live, source, desc }) {
             href={live}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center bg-[#ec6e59] text-white px-4 py-2 rounded-md text-sm transition-all duration-300 hover:bg-transparent hover:border-2 hover:border-[#ec6e59] hover:text-[#ec6e59] "
+            className="flex items-center bg-[#ec6e59] text-white px-4 py-2 rounded-md text-sm transition-all duration-300 hover:bg-transparent hover:border-2 hover:border-[#ec6e59] hover:text-[#ec6e59]"
           >
             Demo
           </a>
