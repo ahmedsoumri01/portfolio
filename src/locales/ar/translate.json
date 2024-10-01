@@ -1,4 +1,16 @@
 {
     
-    "Test": "الإنجليزية"
+    "Test": "الإنجليزية",
+    "//": "/* ========= nav bar ============ */",
+    "NAV_ITEM_EXPeRIence": "الخبرة",
+    "NAV_ITEM_PROJECTS": "المشاريع",
+    "NAV_ITEM_SKILLS": "المهارات",
+    "NAV_ITEM_RESUME": "السيرة الذاتية",
+    "NAV_ITEM_CONTACT": "اتصل",
+    "//": "/* ========= end nav bar ============ */",
+    "//": "/* ========= main section ============ */",
+    "MAIN_TITLE_P1": "مرحبًا،",
+    "MAIN_TITLE_P2": "أنا",
+    "MAIN_TITLE_FULL_NAME": "أحمد سومري",
+    "MAIN_DESCRIPTION": "أنا مطور Full Stack بأساس قوي في تقنيات الويب الحديثة وشغف بالغوص في تطوير البلوكشين. ماهر في MERN stack (MongoDB، Express، React، Node.js)، Firebase، Spring Boot، و Solidity، أنا ماهر في بناء تطبيقات الويب والجوال الديناميكية والقابلة للتطوير. تمتد خبرتي إلى العمل مع أدوات وأطر عمل مختلفة مثل Next.js، MySQL، Tailwind CSS، Bootstrap، Material UI، وتقنيات Web3. كمستقل ومطور Full Stack Web3، أستمتع بصياغة حلول مبتكرة واستكشاف تقاطع البلوكشين وتطوير الويب."
 }

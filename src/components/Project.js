@@ -10,11 +10,17 @@ function Projects({ image, name, live, source, desc }) {
 
   return (
     <div className="m-4 rounded-lg border-2 border-gray-200/30 flex flex-col h-full md:my-6">
+      <div className="relative">
       <img
         alt="project"
         src={image}
         className="rounded-lg w-full h-[350px] xl:h-[390px]"
       />
+      <div className="absolute top-0">
+        more details
+      </div>
+      </div>
+       
 
       <div className="p-2 py-3 flex-1 flex flex-col justify-between">
         <h1 className="text-xl font-bold text-[#ec6e59]">{name}</h1>

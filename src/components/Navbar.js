@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 import { useDarkMode } from "./DarkModeProvider";
 import DarkModeToggle from "react-dark-mode-toggle";
 import LanguageChanger from "./LanguageChanger";
+import { useTranslation } from 'react-i18next';
+
  function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const { t } = useTranslation();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const scrollToComponent = (componentId) => {
     const component = document.getElementById(componentId);
@@ -43,6 +46,7 @@ import LanguageChanger from "./LanguageChanger";
                 ) : (
                     <TbWorldCode className="h-[2w] min-h-[35px] w-[7.8125vw] min-w-[134px] sm:h-[1.8rem] sm:w-[7rem]" />
                 )} */}
+                
         <div>
           <Link to="/">
             <img
@@ -58,32 +62,32 @@ import LanguageChanger from "./LanguageChanger";
               className="tracking-wider hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400] hover:text-[#ff9582]"
               onClick={() => scrollToComponent("experience")}
             >
-              Experience
+             { t("NAV_ITEM_EXPeRIence") }
             </Link>
             <Link
               className="tracking-wide hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400] hover:text-[#ff9582]"
               onClick={() => scrollToComponent("projects")}
             >
-              Projects
+            { t("NAV_ITEM_PROJECTS") }
             </Link>
             <Link
               className="tracking-wide hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400] hover:text-[#ff9582]"
               onClick={() => scrollToComponent("skills")}
             >
-              Skills
+              { t("NAV_ITEM_SKILLS") }
             </Link>
 
             <Link
               className="tracking-wide hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400] hover:text-[#ff9582]"
               onClick={() => scrollToComponent("projects")}
             >
-              resume
+              { t("NAV_ITEM_RESUME") }
             </Link>
             <Link
               className="tracking-wider hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400] hover:text-[#ff9582]"
               onClick={() => scrollToComponent("contact")}
             >
-              Contact
+              { t("NAV_ITEM_CONTACT") }
             </Link>
           </ul>
         )}
@@ -100,32 +104,36 @@ import LanguageChanger from "./LanguageChanger";
                 className="tracking-wider hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400]"
                 onClick={() => scrollToComponent("experience")}
               >
-                Experience
+                
+                {
+                  t("NAV_ITEM_EXPeRIence")
+                }
               </Link>
               <Link
                 className="tracking-wide hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400]"
                 onClick={() => scrollToComponent("projects")}
               >
-                Projects
+                 
+                { t("NAV_ITEM_PROJECTS") }
               </Link>
               <Link
                 className="tracking-wide hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400]"
                 onClick={() => scrollToComponent("projects")}
               >
-                Skills
+                 { t("NAV_ITEM_SKILLS") }
               </Link>
 
               <Link
                 className="tracking-wide hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400]"
                 onClick={() => scrollToComponent("projects")}
               >
-                resume
+                { t("NAV_ITEM_RESUME") }
               </Link>
               <Link
                 className="tracking-wider hover:after:bg-black dark:hover:after:bg-[#ec6e59;] font-[400]"
                 onClick={() => scrollToComponent("contact")}
               >
-                Contact
+                { t("NAV_ITEM_CONTACT") }
               </Link>
             </ul>
           )}

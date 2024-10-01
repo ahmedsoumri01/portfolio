@@ -3,28 +3,32 @@ import React from 'react';
 import myImage from './../assets/main_image.png';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import Typewriter from './Typewriter';
+import { useTranslation } from 'react-i18next';
 
 function Main() {
-    
+    const { t } = useTranslation();
+
     return (
         <div id="main" className="flex flex-col container py-6 p-4 md:min-h-0 min-h-[calc(100vh-6.4rem)] lg:mt-2 lg:m-16 lg:pt-0 md:mt-0 md:pt-0 tm:flex-col sm:flex-row sm:px-[1.5rem] sm:mt-0">
             <div className="flex flex-col md:flex-row md:items-center pt-0 justify-center w-full min-h-[58vh] tm:min-h-min tm:w-full sm:min-h-min sm:w-full sm:pt-0 tm:pt-0">
                 <div className="flex flex-col justify-center sm:w-[70%] w-full sm:mr-5">
                     <h1 className="font-[400] text-[2rem] md:text-[1.7rem] tm:text-[2rem] sm:text-[1.6rem]">
-                        Hi,
+                       {t("MAIN_TITLE_P1")}
                     </h1>
                     <blockquote className="font-[800] text-[2rem] text-[#ec6e59;] mt-[-10px] lg:text-[2.4rem] md:text-[2rem] tm:text-[2.5rem] sm:text-[1rem]">
-                        I'm
+                        {t("MAIN_TITLE_P2")}
                         <span className="before:block mx-4 mb-6 mt-4 before:absolute before:-inset-2 before:-skew-y-[3deg] before:bg-[#ec6e59;] relative inline-block">
-                            <span className="relative text-[#fffffff0] dark:text-[#20262E]">ahmed soumri</span>
+                            <span className="relative text-[#fffffff0] dark:text-[#20262E]">
+                                {t("MAIN_TITLE_FULL_NAME")}
+                            </span>
                         </span>
                     </blockquote>
                     <div className="h-10 mt-4">
                         <Typewriter />
                     </div>
                     <p className="dark:text-[#ccc] text-justify leading-loose pt-5 font-[400] mt-[-.8rem] text-custom-18 sm:text-[1rem] w-[90%] md:w-[95%] tm:w-full sm:w-full sm:mt-0">
-                    I am a Full Stack Developer with a strong foundation in modern web technologies and a passion for diving into blockchain development. Skilled in MERN stack (MongoDB, Express, React, Node.js), Firebase, Spring Boot, and Solidity, I am proficient in building dynamic, scalable web and mobile applications. My experience spans working with various tools and frameworks like Next.js, MySQL, Tailwind CSS, Bootstrap, Material UI, and Web3 technologies. As a freelancer and Web3 Full Stack Developer, I enjoy crafting innovative solutions and exploring the intersection of blockchain and web development. </p>
-                    
+                        {t("MAIN_DESCRIPTION")} 
+                        </p>
                 </div>
                 <div className="flex py-[10px] tm:mt-[40px] items-start mt-[-30px] tm:pr-0 sm:pr-0 sm:justify-between sm:flex-col">
                     <div className="box" >

@@ -1,4 +1,15 @@
 {
-    "Test": "english"
-
+    "Test": "english",
+    "//": "/* ========= nav bar ============ */",
+    "NAV_ITEM_EXPeRIence": "Experience",
+    "NAV_ITEM_PROJECTS": "Projects",
+    "NAV_ITEM_SKILLS": "Skills",
+    "NAV_ITEM_RESUME": "resume",
+    "NAV_ITEM_CONTACT": "Contact",
+    "//": "/* ========= end nav bar ============ */",
+"//": "/* ========= main section ============ */",
+"MAIN_TITLE_P1":" Hi,",
+"MAIN_TITLE_P2":" I'm",
+"MAIN_TITLE_FULL_NAME":"ahmed soumri",
+"MAIN_DESCRIPTION":"I am a Full Stack Developer with a strong foundation in modern web technologies and a passion for diving into blockchain development. Skilled in MERN stack (MongoDB, Express, React, Node.js), Firebase, Spring Boot, and Solidity, I am proficient in building dynamic, scalable web and mobile applications. My experience spans working with various tools and frameworks like Next.js, MySQL, Tailwind CSS, Bootstrap, Material UI, and Web3 technologies. As a freelancer and Web3 Full Stack Developer, I enjoy crafting innovative solutions and exploring the intersection of blockchain and web development."
 }
