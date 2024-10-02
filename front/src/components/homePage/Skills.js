@@ -9,9 +9,9 @@ export default function Skills() {
     AOS.init();
   }, []);
   return (
-    <div id="skills" className="">
-      <div className="mx-auto container">
-        <h1 className="w-72 mb-4 inline border-b-4 border-[#C23B22] tracking-wider font-semibold text-2xl sm:text-2xl md:text-2xl lg:text-2.5xl sm:mb-4 sm:w-full">
+    <div id="skills" className="mx-auto container">
+      <div className="my-8">
+        <h1 className="w-72  px-4mb-4 inline border-b-4 border-[#C23B22] tracking-wider font-semibold text-2xl sm:text-2xl md:text-2xl lg:text-2.5xl sm:mb-4 sm:w-full">
           {t("PROJECTS_TITLE")}
         </h1>
       </div>
