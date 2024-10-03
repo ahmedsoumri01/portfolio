@@ -40,7 +40,7 @@ import { useTranslation } from 'react-i18next';
   return (
     <>
       <div className="flex justify-between items-center py-8 px-4"> 
-        <div>
+        <div className="md:hidden lg:block  ">
           <Link to="/">
             <img
               src={LOGO}

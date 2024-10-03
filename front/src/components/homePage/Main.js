@@ -42,7 +42,8 @@ function Main() {
               </div>
             </div>
           </div>
-          <div className="flex place-content-center mt-7 ">
+
+          <div className="fixed right-2 bottom-20 z-30 bg-black p-2 py-4 rounded-t-full rounded-b-full ">
             <div className="flex flex-row sm:flex-col gap-4">
               <a
                 rel="noreferrer"

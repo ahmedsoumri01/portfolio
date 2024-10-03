@@ -7,13 +7,13 @@ function Projects() {
   const { t } = useTranslation();
 
   return (
-    <div id="projects" className="mx-auto container ">
-      <div className="my-8">
+    <div id="projects" className="md:p-3">
+      <div className="my-8 p-2">
       <h1 className="w-72 mb-4 px-4 inline border-b-4 border-[#C23B22] tracking-wider font-semibold text-2xl sm:text-2xl md:text-2xl lg:text-2.5xl sm:mb-4 sm:w-full">
       {t("PROJECTS_TITLE")}
         </h1>
       </div>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-4 lg:md:grid-cols-3 lg:p-12">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-4 lg:md:grid-cols-3 lg:py-8">
         {data.ProjectsData.map((project) => {
           return (
             <Project
