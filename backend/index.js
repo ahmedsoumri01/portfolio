@@ -14,7 +14,13 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+// allow cross-origin requests
+app.use(cors(
+  {
+    origin: 'http://localhost:3000',
+    credentials: true,
+  }
+));
 app.use(express.json());
 
 const createDefaultAdmin = async () => {
