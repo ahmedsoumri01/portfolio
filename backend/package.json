@@ -4,8 +4,8 @@
   "description": "my portfolio contain all my project ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "build": "echo 'No build process needed for backend'"
+    "start": "node index.js" 
+     
 
   },
   "author": "ahmed soumri",
