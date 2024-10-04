@@ -17,7 +17,7 @@ const app = express();
 // allow cross-origin requests
 app.use(cors(
   {
-    origin: 'http://localhost:3000',
+    origin:  '*', // allow all origins
     credentials: true,
   }
 ));
