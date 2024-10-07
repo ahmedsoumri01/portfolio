@@ -26,11 +26,17 @@ exports.updateAdminProfile = async (req, res) => {
     if (!admin) {
       return res.status(404).json({ message: "Admin not found" });
     }
-    admin.username = req.body.username;
-    admin.email = req.body.email;
-    if(req.body.password){
+    admin.username = req.body.username || admin.username;
+    admin.email = req.body.email || admin.email;
+    if(req.body.password || req.body.oldPassword){
+      //check if the old password is correct
+      const isMatch = await bcrypt.compare(req.body.oldPassword, admin.password);
+      if (!isMatch) {
+        return res.status(400).json({ message: "Invalid credentials" });
+      }
       const salt = await bcrypt.genSalt(10);
       admin.password = await bcrypt.hash(req.body.password, salt);
+
     }
     await admin.save();
     res.json(admin);
