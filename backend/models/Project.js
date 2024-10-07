@@ -20,11 +20,11 @@ const ProjectSchema = new Schema({
   stack: [{
     type: String, // Technologies or tools used in the project
   }],
-  source: {
+  sourceCode: {
     type: String, // GitHub link
     required: true,
   },
-  live: {
+  liveDemo: {
     type: String, // Deployment link
     required: true,
   },

@@ -2,19 +2,33 @@
 import api from "./api";
 const baseURL = process.env.REACT_APP_API_URL + "/api";
 
+const token = localStorage.getItem("token");
+const config = {
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  },
+};
+// get admin profile
 export const getAdminProfile = async (id) => {
   try {
-    const response = await api.get(`${baseURL}/admin/${id}`);
-    return response.data;
+    const res = await api.get(`${baseURL}/admin/profile/${id}`, config); 
+    return res.data;
   } catch (error) {
-    console.error(error);
+    throw error;
   }
 };
-export const updateAdminProfile = async (id, admin) => {
+
+// update admin profile
+export const updateAdminProfile = async (id, data) => {
   try {
-    const response = await api.put(`${baseURL}/admin/${id}`, admin);
-    return response.data;
+    const res = await api.put(
+      `${baseURL}/admin/update-profile/${id}`,
+      data,
+      config
+    );
+    return res.data;
   } catch (error) {
-    console.error(error);
+    throw error;
   }
 };

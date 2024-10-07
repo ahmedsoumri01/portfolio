@@ -1,6 +1,10 @@
 const Admin =  require('../models/Admin');
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+//test route
+exports.test = (req, res) => {
+  res.send("Admin route");
+}
 //get admin profile by id
 exports.getAdminProfile = async (req, res) => {
   try {

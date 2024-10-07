@@ -1,4 +1,4 @@
-const Experience = require('../models/experience');
+const Experience = require("../models/experience");
 
 //get all experiences
 exports.getExperiences = async (req, res) => {
@@ -9,7 +9,7 @@ exports.getExperiences = async (req, res) => {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
-}
+};
 
 //get experience by id
 exports.getExperienceById = async (req, res) => {
@@ -23,7 +23,7 @@ exports.getExperienceById = async (req, res) => {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
-}
+};
 
 //create a new experience
 exports.createExperience = async (req, res) => {
@@ -42,7 +42,7 @@ exports.createExperience = async (req, res) => {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
-}
+};
 
 //update an experience
 exports.updateExperience = async (req, res) => {
@@ -63,7 +63,7 @@ exports.updateExperience = async (req, res) => {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
-}
+};
 
 //delete an experience
 exports.deleteExperience = async (req, res) => {
@@ -72,10 +72,10 @@ exports.deleteExperience = async (req, res) => {
     if (!experience) {
       return res.status(404).json({ message: "Experience not found" });
     }
-    await experience.remove();
+    await experience.deleteOne(experience._id);
     res.json({ message: "Experience removed" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
-}
+};

@@ -5,12 +5,12 @@ const authMiddleware = require('../middleware/authMiddleware');
 // @route   GET api/experience
 // @desc    Get all experiences
 // @access  Public
-router.get('/', experienceController.getExperiences);
+router.get('/', authMiddleware,experienceController.getExperiences);
 
 // @route   GET api/experience/:id
 // @desc    Get experience by id
 // @access  Public
-router.get('/:id', experienceController.getExperienceById);
+router.get('/:id',authMiddleware, experienceController.getExperienceById);
 
 // @route   POST api/experience
 // @desc    Create a new experience

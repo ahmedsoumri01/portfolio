@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ExperienceSchema = new Schema({
-    org: {
+  company: {
       type: String, // Organization name
       required: true,
     },
@@ -18,6 +18,9 @@ const ExperienceSchema = new Schema({
     },
     endDate: {
       type: Date,
+    },
+    location: {
+      type: String, // Location of the job
     },
     present: {
       type: Boolean,

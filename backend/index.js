@@ -54,10 +54,12 @@ createDefaultAdmin();
 // Set the port dynamically
 const PORT = process.env.PORT || 3001;
 //routes 
+app.use('/api/admin', require('./routes/adminRoutes'));
+
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/experiences', require('./routes/experienceRoutes'));
-/* app.use('/api/projects', require('./routes/projectRoutes')); */
-/* app.use('/api/skills', require('./routes/skillRoutes')); */
+app.use('/api/projects', require('./routes/projectRoutes'));
+app.use('/api/skills', require('./routes/skillsRoutes'));
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
 const server = app.listen(PORT, () => {

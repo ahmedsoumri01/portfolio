@@ -10,7 +10,7 @@ import Login from "./pages/auth/Login";
 import Resetpassword from "./pages/auth/Resetpassword";
 import AdminLayout from "./layouts/AdminLayout";
 import AdminRoute from "./components/AdminRoute";
-import AdminProfile from "./pages/admin/AdminProfile";
+import AdminProfile from "./pages/admin/AdminProfile/AdminProfile";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminManageExperiences from "./pages/admin/AdminManageExperiences";
 import AdminManageProjects from "./pages/admin/AdminManageProjects";

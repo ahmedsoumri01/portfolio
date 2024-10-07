@@ -10,7 +10,7 @@ const authMiddleware = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await Admin.findById(decoded.user.id).select("-motDePasse");
+    req.user = await Admin.findById(decoded.admin.id).select("-password");
     next();
   } catch (err) {
     console.error(err);
