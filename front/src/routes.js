@@ -1,24 +1,52 @@
 import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    Route,
-  } from "react-router-dom";
-  
-  import RootLayout from "./layouts/RootLayout";
-  import Home from "./pages/Home";
-  import Login from "./pages/auth/Login";
-  import Resetpassword from "./pages/auth/Resetpassword";
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<Home />} /> 
-        <Route path="/login" element={<Login />} />
-        <Route path="/resetpassword" element={<Resetpassword />} />
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
 
-     
-  
-      </Route>
-    )
-  );
-  
-  export default router;
+import RootLayout from "./layouts/RootLayout";
+import Home from "./pages/Home";
+import Login from "./pages/auth/Login";
+import Resetpassword from "./pages/auth/Resetpassword";
+import AdminLayout from "./layouts/AdminLayout";
+import AdminRoute from "./components/AdminRoute";
+import AdminProfile from "./pages/admin/AdminProfile";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminManageExperiences from "./pages/admin/AdminManageExperiences";
+import AdminManageProjects from "./pages/admin/AdminManageProjects";
+import AdminManageSkills from "./pages/admin/AdminManageSkills";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/resetpassword" element={<Resetpassword />} />
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route
+          index
+          element={<AdminRoute element={<AdminDashboard />} />}
+        />
+        <Route
+         path="dashboard/profile"
+          element={<AdminRoute element={<AdminProfile />} />}
+        />
+        <Route
+          path="dashboard/experiences"
+          element={<AdminRoute element={<AdminManageExperiences />} />}
+        />
+        <Route
+          path="dashboard/projects"
+          element={<AdminRoute element={<AdminManageProjects />} />}
+        />
+        <Route
+          path="dashboard/skills"
+          element={<AdminRoute element={<AdminManageSkills />} />}
+        />
+      </Route> 
+      <Route path="*" element={<div>404 Page</div>} />
+    </Route>
+  )
+);
+
+export default router;

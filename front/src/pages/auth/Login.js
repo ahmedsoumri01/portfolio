@@ -29,9 +29,10 @@ export default function Login() {
         console.log(data);
         // Save token to local storage
         localStorage.setItem("token", data.token);
+        localStorage.setItem("isLogged", true);
         setLoading(false);
         // Redirect to home page
-        window.location.href = "/";
+        window.location.href = "/admin";
       })
       .catch((error) => {
         console.error(error);
