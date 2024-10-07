@@ -2,10 +2,18 @@
 import api from './api';
 const baseURL = process.env.REACT_APP_API_URL + "/api";
 
+
+const token = localStorage.getItem("token");
+const config = {
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  },
+};
 //get all experiences
 export const getExperiences = async () => {
     try {
-        const response = await api.get(`${baseURL}/experiences`);
+        const response = await api.get(`${baseURL}/experiences`,config);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -15,7 +23,7 @@ export const getExperiences = async () => {
 //get experience by id
 export const getExperienceById = async (id) => {
     try {
-        const response = await api.get(`${baseURL}/experiences/${id}`);
+        const response = await api.get(`${baseURL}/experiences/${id}`,config);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -25,7 +33,7 @@ export const getExperienceById = async (id) => {
 //create a new experience
 export const createExperience = async (experience) => {
     try {
-        const response = await api.post(`${baseURL}/experiences`, experience);
+        const response = await api.post(`${baseURL}/experiences`, experience,config);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -35,7 +43,7 @@ export const createExperience = async (experience) => {
 //update an experience
 export const updateExperience = async (id, experience) => {
     try {
-        const response = await api.put(`${baseURL}/experiences/${id}`, experience);
+        const response = await api.put(`${baseURL}/experiences/${id}`, experience,config);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -45,7 +53,7 @@ export const updateExperience = async (id, experience) => {
 //delete an experience
 export const deleteExperience = async (id) => {
     try {
-        const response = await api.delete(`${baseURL}/experiences/${id}`);
+        const response = await api.delete(`${baseURL}/experiences/${id}`,config);
         return response.data;
     } catch (error) {
         console.error(error);
