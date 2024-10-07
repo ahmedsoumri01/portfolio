@@ -1,7 +1,10 @@
 import React from 'react'
 import { Button, Label, TextInput, Modal } from "flowbite-react";
 import { FaEye, FaEyeSlash, FaTimes } from "react-icons/fa"; 
+import { Spinner } from 'flowbite-react';
 export default function UpdateModal({
+  username,
+  setUsername,
   isModalOpen,
   toggleModal,
   email,
@@ -14,7 +17,8 @@ export default function UpdateModal({
   setShowOldPassword,
   showNewPassword,
   setShowNewPassword,
-  handleSave
+  handleSave,
+  startUpdate
 }) {
   return (
     <div>
@@ -25,7 +29,24 @@ export default function UpdateModal({
           </div>
         </Modal.Header>
         <Modal.Body>
-          <div className="space-y-6 py-4">
+          {startUpdate ? (
+            <div className="flex justify-center items-center space-y-6 py-4">
+              <Spinner className="w-12 h-12" />
+            </div> 
+          ) : (
+
+            <div className="space-y-6 py-4">
+            <div>
+              <Label htmlFor="username" value="username" />
+              <TextInput
+                id="username"
+                type="username"
+                placeholder="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              </div>
             <div>
               <Label htmlFor="newEmail" value="New Email" />
               <TextInput
@@ -69,9 +90,13 @@ export default function UpdateModal({
               </div>
             </div>
           </div>
+          )}
+
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleSave} className='w-full'>Save Changes</Button>
+          <Button onClick={handleSave}
+          disabled={startUpdate}
+          className='w-full'>Save Changes</Button>
         </Modal.Footer>
       </Modal>
     </div>

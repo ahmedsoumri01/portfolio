@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Button, Label, TextInput, Modal } from "flowbite-react";
-import { FaEye, FaEyeSlash, FaTimes } from "react-icons/fa"; // Icons for password visibility and close button
-import { getAdminProfile } from "../../../service/adminService";
+import { Button, Label, TextInput } from "flowbite-react";
+// Icons for password visibility and close button
+import {
+  getAdminProfile,
+  updateAdminProfile,
+} from "../../../service/adminService";
 import { jwtDecode } from "jwt-decode";
 import UpdateModal from "./UpdateModal";
 export default function AdminProfile() {
@@ -12,12 +15,14 @@ export default function AdminProfile() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
+  const [startUpdate, setStartUpdate] = useState(false);
   const token = localStorage.getItem("token");
 
   const fetchAdminProfile = async () => {
     try {
       const decoded = jwtDecode(token);
       const admin = await getAdminProfile(decoded.admin.id);
+      
       setEmail(admin.email);
       setUsername(admin.username);
     } catch (error) {
@@ -34,9 +39,29 @@ export default function AdminProfile() {
   };
 
   const handleSave = () => {
-    // Add logic for saving updated profile info
-    console.log("Saving new info:", email, oldPassword, newPassword);
-    toggleModal(); // Close the modal after saving
+    try {
+      setStartUpdate(true);
+      const decoded = jwtDecode(token);
+      const data = {
+        username: username,
+        email,
+        password: newPassword,
+        oldPassword: oldPassword,
+      };
+      updateAdminProfile(decoded.admin.id, data);
+      fetchAdminProfile();
+      // empty the password fields
+      setOldPassword("");
+      setNewPassword("");
+      alert("Profile updated successfully");
+      fetchAdminProfile();
+      setStartUpdate(false);
+
+      toggleModal();
+    } catch (error) {
+      console.error(error);
+      setStartUpdate(false);
+    }
   };
 
   return (
@@ -84,6 +109,8 @@ export default function AdminProfile() {
 
       {/* Modal for updating profile */}
       <UpdateModal
+        username={username}
+        setUsername={setUsername}
         isModalOpen={isModalOpen}
         toggleModal={toggleModal}
         email={email}
@@ -97,8 +124,8 @@ export default function AdminProfile() {
         showNewPassword={showNewPassword}
         setShowNewPassword={setShowNewPassword}
         handleSave={handleSave}
+        startUpdate={startUpdate}
       />
-     
     </>
   );
 }
