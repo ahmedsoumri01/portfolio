@@ -28,7 +28,7 @@ export default function DashboardSideBar() {
             onClick={() => {
               setHideSidebar(!HideSidebar);
             }}
-            className="dark:text-white dark:border-2 dark:border-white p-1.5 rounded-md dark:hover:bg-white dark:hover:text-black dark:transition-all dark:duration-300"
+            className="border-2 border-black hover:bg-gray-300 dark:text-white dark:border-2 dark:border-white p-1.5 rounded-md dark:hover:bg-white dark:hover:text-black dark:transition-all dark:duration-300"
           >
             <HiArrowSmRight
               className={`transform transition-transform duration-300 ${
@@ -42,7 +42,7 @@ export default function DashboardSideBar() {
             <NavLink to="/admin">
               <Sidebar.Item className="cursor-pointer hover:bg-blue-500 hover:text-white">
                 <div className="flex gap-2 items-center hover:text-white">
-                  <span className="text-2xl text-white">
+                  <span className="text-2xl">
                     <HiChartPie />
                   </span>
                   {!HideSidebar && <span>Dashboard</span>}
@@ -55,7 +55,7 @@ export default function DashboardSideBar() {
                 labelColor="dark"
                 label={HideSidebar ? null : "Admin"}
               >
-                <div className="flex gap-2 items-center text-white hover:text-white">
+                <div className="flex gap-2 items-center text-black dark:text:white hover:text-white">
                   <span className="text-2xl">
                     {" "}
                     <CgProfile />{" "}
@@ -67,7 +67,7 @@ export default function DashboardSideBar() {
 
             <NavLink to="dashboard/experiences">
               <Sidebar.Item className="cursor-pointer hover:bg-blue-500 hover:text-white">
-                <div className="flex gap-2 items-center text-white hover:text-white">
+                <div className="flex gap-2 items-center text-black dark:text:white hover:text-white">
                   <span className="text-2xl">
                     <MdOutlineWorkOutline />
                   </span>
@@ -78,8 +78,8 @@ export default function DashboardSideBar() {
 
             <NavLink to="dashboard/projects">
               <Sidebar.Item className="cursor-pointer hover:bg-blue-500 hover:text-white">
-                <div className="flex gap-2 items-center text-white hover:text-white">
-                  <span className="text-2xl text-white">
+                <div className="flex gap-2 items-center text-black dark:text:white hover:text-white">
+                  <span className="text-2xl">
                     <FaRegBuilding />
                   </span>
                   {!HideSidebar && <span>manage projects</span>}
@@ -88,7 +88,7 @@ export default function DashboardSideBar() {
             </NavLink>
             <NavLink to="dashboard/skills">
               <Sidebar.Item className="cursor-pointer hover:bg-blue-500 hover:text-white">
-                <div className="flex gap-2 items-center text-white hover:text-white">
+                <div className="flex gap-2 items-center text-black dark:text:white hover:text-white">
                   <span className="text-2xl">
                     <GiSkills />
                   </span>

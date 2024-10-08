@@ -2,6 +2,8 @@ import React from 'react'
 import { Button, Label, TextInput, Modal } from "flowbite-react";
 import { FaEye, FaEyeSlash, FaTimes } from "react-icons/fa"; 
 import { Spinner } from 'flowbite-react';
+import { toast } from "react-toastify";
+
 export default function UpdateModal({
   username,
   setUsername,

@@ -11,10 +11,10 @@ import Resetpassword from "./pages/auth/Resetpassword";
 import AdminLayout from "./layouts/AdminLayout";
 import AdminRoute from "./components/AdminRoute";
 import AdminProfile from "./pages/admin/AdminProfile/AdminProfile";
-import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminDashboard from "./pages/admin/dashboard/AdminDashboard";
 import AdminManageExperiences from "./pages/admin/experienceManagement/AdminManageExperiences";
-import AdminManageProjects from "./pages/admin/AdminManageProjects";
-import AdminManageSkills from "./pages/admin/AdminManageSkills";
+import AdminManageProjects from "./pages/admin/projectManagement/AdminManageProjects";
+import AdminManageSkills from "./pages/admin/skillsManagement/AdminManageSkills";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

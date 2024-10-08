@@ -7,6 +7,7 @@ import {
 } from "../../../service/adminService";
 import { jwtDecode } from "jwt-decode";
 import UpdateModal from "./UpdateModal";
+import { toast } from "react-toastify";
 export default function AdminProfile() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -22,7 +23,7 @@ export default function AdminProfile() {
     try {
       const decoded = jwtDecode(token);
       const admin = await getAdminProfile(decoded.admin.id);
-      
+
       setEmail(admin.email);
       setUsername(admin.username);
     } catch (error) {
@@ -53,14 +54,16 @@ export default function AdminProfile() {
       // empty the password fields
       setOldPassword("");
       setNewPassword("");
-      alert("Profile updated successfully");
+    
       fetchAdminProfile();
       setStartUpdate(false);
+      toast.success("Profile updated successfully");
 
       toggleModal();
     } catch (error) {
       console.error(error);
       setStartUpdate(false);
+      toast.error("Error updating profile");
     }
   };
 

@@ -36,8 +36,9 @@ export default function Login() {
       })
       .catch((error) => {
         console.error(error);
-        /* setError(error.response.data.message);
-        toast.error(error.response.data.message); */
+        setLoading(false);
+        setError(error.response.data.message);
+        toast.error(error.response.data.message);
       });
   };
 

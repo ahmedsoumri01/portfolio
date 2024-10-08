@@ -39,7 +39,7 @@ export default function AdminNavBar() {
 
   return (
     <>
-      <div className="bg-white dark:bg-[#20262E] mb-1 flex justify-between items-center py-2 px-4">
+      <div className="bg-white dark:bg-[#20262E] mb-1 flex justify-between items-center py-2 px-4 text-black">
         <div className="md:hidden lg:block  ">
           <Link to="/">
             <img
