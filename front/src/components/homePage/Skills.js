@@ -19,11 +19,16 @@ export default function Skills() {
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8 my-4">
           {skillsData.map((skill) => (
-            <div key={skill.id} className="shadow-2xl shadow-[#040c16] hover:scale-110 duration-300 rounded-md">
-              <div>
-                <img src={skill.logo} className="w-20 mx-auto" alt={skill.skill} />
-                <p className="my-4">{skill.skill}L</p>
-              </div>
+            <div
+              key={skill.id}
+              className="shadow-md shadow-[#040c16] hover:scale-110 duration-300 rounded-md p-1"
+            >
+              <img
+                src={skill.logo}
+                className="w-20 p-1 mx-auto"
+                alt={skill.skill}
+              />
+              <p className="my-4">{skill.skill}L</p>
             </div>
           ))}
         </div>

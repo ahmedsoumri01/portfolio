@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 
-function Projects({ image, name, live, source, desc }) {
+function Project({ image, name, live, source, desc }) {
   const [showFullDesc, setShowFullDesc] = useState(false);
 
   const toggleDescription = () => {
@@ -9,7 +9,7 @@ function Projects({ image, name, live, source, desc }) {
   };
 
   return (
-    <div className="m-4 rounded-lg border-2 h-fit border-gray-200/30 flex flex-col min-h-[650px] md:my-6">
+    <div className="m-4 rounded-lg border-2 h-fit  border-gray-200/70 flex flex-col min-h-[650px] md:my-6 dark:border-gray-200/30">
       <div className="relative group">
         <img
           alt="project"
@@ -48,7 +48,7 @@ function Projects({ image, name, live, source, desc }) {
             href={live}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center bg-[#ec6e59] text-white px-4 py-2 rounded-md text-sm transition-all duration-300 hover:bg-transparent hover:border-2 hover:border-[#ec6e59] hover:text-[#ec6e59]"
+            className="flex border-2 border-transparent items-center bg-[#ec6e59] text-white px-4 py-2 rounded-md text-sm transition-all duration-300 hover:bg-white hover:text-[#ec6e59] hover:border-[#ec6e59]"
           >
             Demo
           </a>
@@ -56,7 +56,7 @@ function Projects({ image, name, live, source, desc }) {
             href={source}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1 px-4 py-2 border border-black rounded-md text-sm bg-white dark:bg-[#20262E] transition-all duration-300 hover:bg-transparent hover:border-2 hover:border-black hover:text-black hover:bg-white"
+            className="flex items-center gap-1 px-4 py-2 border rounded-md border-black text-sm hover:bg-black hover:text-white transition-all duration-300 dark:hover:bg-white dark:hover:text-black dark:border-white"
           >
             <AiFillGithub className="w-6 h-6" /> Code
           </a>
@@ -66,4 +66,4 @@ function Projects({ image, name, live, source, desc }) {
   );
 }
 
-export default Projects;
+export default Project;

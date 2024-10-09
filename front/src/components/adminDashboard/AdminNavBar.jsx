@@ -9,19 +9,7 @@ import { useTranslation } from "react-i18next";
 
 export default function AdminNavBar() {
   const [showMenu, setShowMenu] = useState(false);
-  const { t } = useTranslation();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const scrollToComponent = (componentId) => {
-    const component = document.getElementById(componentId);
-    if (component) {
-      component.scrollIntoView({
-        behavior: "smooth",
-        duration: 2000,
-        block: "start",
-        inline: "nearest",
-      });
-    }
-  };
 
   const handleWindowResize = () => {
     const screenWidth = window.innerWidth;
@@ -45,7 +33,7 @@ export default function AdminNavBar() {
             <img
               src={LOGO}
               alt="logo"
-              className="h-[2vw] min-h-[60px] w-[7.8125vw] min-w-[134px] sm:h-[1.8rem] sm:w-[7rem]"
+              className="hover:bg-blend-darkenh-[2vw] min-h-[60px] w-[7.8125vw] min-w-[134px] sm:h-[1.8rem] sm:w-[7rem]"
             />
           </Link>
         </div>
