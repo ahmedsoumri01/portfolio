@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminSectionTitle from '../../../components/AdminSectionTitle'
+import AdminSectionTitle from '../../../components/adminDashboard/AdminSectionTitle'
 export default function AdminManageSkills() {
   return (
     <div className="w-full bg-white rounded-md m-2 min-h-screen">
